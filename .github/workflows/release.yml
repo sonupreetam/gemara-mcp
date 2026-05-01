@@ -71,3 +71,10 @@ jobs:
             --certificate-identity-regexp="${IDENTITY}" \
             --certificate-oidc-issuer="${OIDC_ISSUER}" \
             "${IMAGE}:latest" > /dev/null
+
+  nfr6-eval:
+    needs: goreleaser
+    uses: gemaraproj/gemara-mcp-eval-infra/.github/workflows/determinism-check.yml@ff4931370ed6b2b65556a489595adbf8306f1fa5 # pin to main — update SHA after eval-infra#2 merges
+    with:
+      gemara_mcp_image: "ghcr.io/gemaraproj/gemara-mcp:${{ github.ref_name }}"
+      gemara_schema_ref: "${{ github.ref_name }}"
