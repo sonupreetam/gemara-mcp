@@ -1,0 +1,10 @@
+name: "Test NFR6 Hook"
+on:
+  workflow_dispatch:
+
+jobs:
+  nfr6-eval:
+    uses: gemaraproj/gemara-mcp-eval-infra/.github/workflows/determinism-check.yml@5b930c5c51da30998326384d196363734c84fc75
+    with:
+      gemara_mcp_image: "ghcr.io/gemaraproj/gemara-mcp:latest"
+      gemara_schema_ref: "main"
