@@ -74,7 +74,7 @@ jobs:
 
   nfr6-eval:
     needs: goreleaser
-    uses: gemaraproj/gemara-mcp-eval-infra/.github/workflows/determinism-check.yml@5b930c5c51da30998326384d196363734c84fc75 # pin to main — update SHA after eval-infra#3 merges
+    uses: gemaraproj/gemara-mcp-eval-infra/.github/workflows/determinism-check.yml@81013dcb4c86486b59d78b048db4a2d793d51119 # v0.1.0
     with:
       gemara_mcp_image: "ghcr.io/gemaraproj/gemara-mcp:${{ github.ref_name }}"
       gemara_schema_ref: "${{ github.ref_name }}"
